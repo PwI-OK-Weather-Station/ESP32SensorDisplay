@@ -1,0 +1,9 @@
+#ifndef AD1B3CBD_011F_4658_8916_A6F5AC196527
+#define AD1B3CBD_011F_4658_8916_A6F5AC196527
+
+#define ENDPOINT "http://server.com/api/device/pm8j2wzb"
+#define SSID_NAME "SSID"
+#define WIFI_PASSWORD "pass"
+
+
+#endif /* AD1B3CBD_011F_4658_8916_A6F5AC196527 */
