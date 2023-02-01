@@ -153,7 +153,10 @@ void displayMeasurement(){
 			lcd.print(String(dht.readHumidity())+"%");
 			break;
 		}
-		case 3:
+		case 3:{
+			lcd.print(serverValues[page-3]+(char)223+"C");
+			break;
+		}
 		case 4:
 		case 5:{
 			lcd.print(serverValues[page-3]);
@@ -305,8 +308,13 @@ void loop() {
 					const char* pressure = measurements_0["pressure"]; // "961.100000"
 					const char* temperature = measurements_0["temperature"]; // "25.600000"
 					serverValues[0] = temperature;
+					serverValues[0].remove(serverValues[0].length()-4);
 					serverValues[1] = pressure;
+					serverValues[1].remove(serverValues[1].length()-4);
+					serverValues[1] += "hPa";
 					serverValues[2] = humidity;
+					serverValues[2].remove(serverValues[2].length()-4);
+					serverValues[2] += "%";
 					const char* name = doc["name"]; // "test1"
 					sensorName = name;
 					syncTime=millis();
